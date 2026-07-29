@@ -1,0 +1,20 @@
+workflows:
+	android-apk:
+		name: B&S Dolce
+		max_build_duration: 60
+	environment: 
+		java: 17
+	scripts:
+		- name: Build Android APK
+		script: |
+			chmod +x ./gradlew
+			./gradlew assembleDebug
+	artifacts:
+		-app/buil/outputs/apk/debug/app-debug.apk
+
+	publishing:
+		email:
+			recipients: behague.benjamin@gmail.com
+			notify:
+				success: true
+				fail: true
