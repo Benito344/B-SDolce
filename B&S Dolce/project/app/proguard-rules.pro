@@ -1,0 +1,3 @@
+-keep class com.boulangerie.pro.data.** { *; }
+-keepattributes *Annotation*
+-keepclassmembers class * { @kotlinx.serialization.Serializable <fields>; }
